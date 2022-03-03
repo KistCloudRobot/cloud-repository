@@ -1,0 +1,24 @@
+{
+  "name": "cloud-repository",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "rdf": "^4.1.0",
+    "rdf-parse": "^1.9.1",
+    "streamify-string": "^1.0.1"
+  },
+  "resolutions": {
+    "parse-link-header": "2.0.0"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/KistCloudRobot/cloud-repository.git",
+  "author": "uosbell <uosbell@gmail.com>",
+  "license": "MIT"
+}

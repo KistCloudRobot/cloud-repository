@@ -1,0 +1,148 @@
+@prefix : <http://www.robot-arbi.kr/ontologies/skill.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix isro: <http://www.robot-arbi.kr/ontologies/isro.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix knowrob: <http://knowrob.org/kb/knowrob.owl#> .
+@prefix computable: <http://knowrob.org/kb/computable.owl#> .
+
+<http://www.robot-arbi.kr/ontologies/skill-capability.owl> a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.robot-arbi.kr/ontologies/skill-capability.owl#comprise
+
+<http://www.robot-arbi.kr/ontologies/skill-capability.owl#comprise> a owl:ObjectProperty ;
+	owl:inverseOf <http://www.robot-arbi.kr/ontologies/skill-capability.owl#consistOf> ;
+	rdfs:domain _:genid404 .
+
+_:genid404 a owl:Class ;
+	owl:unionOf _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first <http://knowrob.org/kb/srdl2-cap.owl#Capability> .
+
+<http://knowrob.org/kb/srdl2-cap.owl#Capability> a owl:Class .
+
+_:genid3 rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first <http://www.robot-arbi.kr/ontologies/skill-capability.owl#Skill> ;
+	rdf:rest rdf:nil .
+
+<http://www.robot-arbi.kr/ontologies/skill-capability.owl#comprise> rdfs:range _:genid405 .
+
+_:genid405 a owl:Class ;
+	owl:unionOf _:genid3 .
+# 
+# http://www.robot-arbi.kr/ontologies/skill-capability.owl#consistOf
+
+<http://www.robot-arbi.kr/ontologies/skill-capability.owl#consistOf> a owl:ObjectProperty ;
+	rdfs:domain _:genid406 .
+
+_:genid406 a owl:Class ;
+	owl:unionOf _:genid6 .
+
+_:genid6 a rdf:List ;
+	rdf:first <http://knowrob.org/kb/srdl2-cap.owl#Capability> ;
+	rdf:rest _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first <http://www.robot-arbi.kr/ontologies/skill-capability.owl#Skill> ;
+	rdf:rest rdf:nil .
+
+<http://www.robot-arbi.kr/ontologies/skill-capability.owl#consistOf> rdfs:range _:genid407 .
+
+_:genid407 a owl:Class ;
+	owl:unionOf _:genid6 .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://knowrob.org/kb/srdl2-cap.owl#Capability
+# 
+# http://knowrob.org/kb/srdl2-cap.owl#CollisionFreeNavigationCapability
+
+<http://knowrob.org/kb/srdl2-cap.owl#CollisionFreeNavigationCapability> a owl:Class .
+# 
+# http://knowrob.org/kb/srdl2-cap.owl#NavigationCapability
+
+<http://knowrob.org/kb/srdl2-cap.owl#NavigationCapability> a owl:Class .
+# 
+# http://knowrob.org/kb/srdl2-cap.owl#PickingUpAnObjectCapability
+
+<http://knowrob.org/kb/srdl2-cap.owl#PickingUpAnObjectCapability> a owl:Class .
+# 
+# http://knowrob.org/kb/srdl2-cap.owl#PuttingDownAnObjectCapability
+
+<http://knowrob.org/kb/srdl2-cap.owl#PuttingDownAnObjectCapability> a owl:Class .
+# 
+# http://www.robot-arbi.kr/ontologies/isro.owl#ConceptualThing
+
+isro:ConceptualThing a owl:Class .
+# 
+# http://www.robot-arbi.kr/ontologies/skill-capability.owl#PalletCarrySkill
+
+<http://www.robot-arbi.kr/ontologies/skill-capability.owl#PalletCarrySkill> a owl:Class ;
+	rdfs:subClassOf <http://www.robot-arbi.kr/ontologies/skill-capability.owl#Skill> , _:genid7 .
+
+_:genid7 a owl:Restriction ;
+	owl:onProperty <http://www.robot-arbi.kr/ontologies/skill-capability.owl#consistOf> ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass <http://knowrob.org/kb/srdl2-cap.owl#NavigationCapability> .
+
+<http://www.robot-arbi.kr/ontologies/skill-capability.owl#PalletCarrySkill> rdfs:subClassOf _:genid8 .
+
+_:genid8 a owl:Restriction ;
+	owl:onProperty <http://www.robot-arbi.kr/ontologies/skill-capability.owl#consistOf> ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass <http://knowrob.org/kb/srdl2-cap.owl#PickingUpAnObjectCapability> .
+
+<http://www.robot-arbi.kr/ontologies/skill-capability.owl#PalletCarrySkill> rdfs:subClassOf _:genid9 .
+
+_:genid9 a owl:Restriction ;
+	owl:onProperty <http://www.robot-arbi.kr/ontologies/skill-capability.owl#consistOf> ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass <http://knowrob.org/kb/srdl2-cap.owl#PuttingDownAnObjectCapability> .
+# 
+# http://www.robot-arbi.kr/ontologies/skill-capability.owl#Skill
+
+<http://www.robot-arbi.kr/ontologies/skill-capability.owl#Skill> a owl:Class ;
+	rdfs:subClassOf isro:ConceptualThing .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.robot-arbi.kr/ontologies/skill-capability.owl#pallet_lift_capability
+
+<http://www.robot-arbi.kr/ontologies/skill-capability.owl#pallet_lift_capability> a owl:NamedIndividual , <http://knowrob.org/kb/srdl2-cap.owl#PickingUpAnObjectCapability> .
+# 
+# http://www.robot-arbi.kr/ontologies/skill-capability.owl#pallet_liftdown_capability
+
+<http://www.robot-arbi.kr/ontologies/skill-capability.owl#pallet_liftdown_capability> a owl:NamedIndividual , <http://knowrob.org/kb/srdl2-cap.owl#PuttingDownAnObjectCapability> .
+# 
+# http://www.robot-arbi.kr/ontologies/skill-capability.owl#turtlebot_move_base
+
+<http://www.robot-arbi.kr/ontologies/skill-capability.owl#turtlebot_move_base> a owl:NamedIndividual , <http://knowrob.org/kb/srdl2-cap.owl#CollisionFreeNavigationCapability> .
+# 
+# Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
